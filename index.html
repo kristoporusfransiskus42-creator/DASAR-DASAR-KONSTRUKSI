@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b75">
+  <meta name="description" content="GENIUS ASSESSMENT — AI FOR CONSTRUCTIONS: asesmen digital Dasar-Dasar Konstruksi.">
+  <title>GENIUS ASSESSMENT — Dasar-Dasar Konstruksi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark app-nav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#" aria-label="Genius Assessment beranda">
+        <span class="brand-mark">G</span> GENIUS <span class="brand-light">ASSESSMENT</span>
+      </a>
+      <span class="navbar-text small text-white-50 d-none d-sm-inline">AI FOR CONSTRUCTIONS</span>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-lg-5">
+    <section id="introScreen" class="screen">
+      <div class="hero-card overflow-hidden">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> DIGITAL LEARNING • CONSTRUCTION</div>
+          <h1>Dasar-Dasar <span>Konstruksi</span></h1>
+          <p class="hero-lead">Uji pemahamanmu tentang gambar denah, potongan, dan tampak menggunakan AutoCAD.</p>
+          <div class="hero-pills">
+            <span>📝 25 soal</span><span>⏱️ 90 menit</span><span>🎯 Pilihan ganda</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="blueprint blueprint-one"><div class="bp-room"></div><div class="bp-door"></div><div class="bp-window"></div></div>
+          <div class="blueprint blueprint-two"><div class="bp-roof"></div><div class="bp-house"></div><div class="bp-window2"></div></div>
+          <div class="art-spark spark-a">✦</div><div class="art-spark spark-b">＋</div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-1 align-items-stretch">
+        <div class="col-lg-7">
+          <div class="panel-card h-100">
+            <div class="section-kicker">LANGKAH 01</div>
+            <h2 class="h4 fw-bold mb-1">Identitas peserta</h2>
+            <p class="text-secondary mb-4">Isi data dengan benar sebelum memulai asesmen.</p>
+            <form id="identityForm" novalidate>
+              <div class="mb-3">
+                <label for="studentName" class="form-label">Nama lengkap <span class="required">*</span></label>
+                <input id="studentName" class="form-control form-control-lg" type="text" maxlength="100" autocomplete="name" placeholder="Masukkan nama lengkap" required>
+                <div class="invalid-feedback">Nama lengkap wajib diisi (minimal 3 karakter).</div>
+              </div>
+              <div class="mb-3">
+                <label for="studentNis" class="form-label">NIS <span class="required">*</span></label>
+                <input id="studentNis" class="form-control form-control-lg" type="text" maxlength="30" autocomplete="off" placeholder="Masukkan NIS" required>
+                <div class="invalid-feedback">NIS wajib diisi.</div>
+              </div>
+              <div class="mb-4">
+                <label for="studentClass" class="form-label">Kelas <span class="required">*</span></label>
+                <input id="studentClass" class="form-control form-control-lg" type="text" maxlength="30" placeholder="Contoh: XI DPIB 1" required>
+                <div class="invalid-feedback">Kelas wajib diisi.</div>
+              </div>
+              <div id="formAlert" class="alert alert-warning d-none" role="alert"></div>
+              <button type="submit" class="btn btn-primary btn-lg w-100">Mulai Asesmen <span class="ms-2">→</span></button>
+              <p class="privacy-note mt-3 mb-0"><span aria-hidden="true">🔒</span> Data identitas hanya digunakan untuk menampilkan hasil pada sesi ini.</p>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="panel-card rules-card h-100">
+            <div class="section-kicker">SEBELUM MULAI</div>
+            <h2 class="h4 fw-bold mb-3">Panduan asesmen</h2>
+            <div class="rule-item"><span class="rule-icon">1</span><div><strong>Kerjakan mandiri</strong><p>Baca pertanyaan sampai selesai sebelum memilih jawaban.</p></div></div>
+            <div class="rule-item"><span class="rule-icon">2</span><div><strong>Jawaban terkunci</strong><p>Setiap jawaban tidak dapat diubah setelah dipilih.</p></div></div>
+            <div class="rule-item"><span class="rule-icon">3</span><div><strong>Umpan balik langsung</strong><p>Perhatikan pembahasan setelah menjawab setiap soal.</p></div></div>
+            <div class="rule-item"><span class="rule-icon">4</span><div><strong>Perhatikan waktu</strong><p>Asesmen otomatis selesai saat waktu 90 menit habis.</p></div></div>
+            <div class="tip-box mt-4"><span class="tip-star">✦</span><div><strong>Siap beraksi?</strong><br><span>Pastikan koneksi internet aktif untuk memuat Bootstrap.</span></div></div>
+          </div>
+        </div>
+      </div>
+      <footer class="app-footer">GENIUS ASSESSMENT <span>•</span> AI FOR CONSTRUCTIONS</footer>
+    </section>
+
+    <section id="examScreen" class="screen d-none">
+      <div class="exam-topline d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+        <div><div class="section-kicker">ASESMEN BERLANGSUNG</div><h1 class="h3 fw-bold mb-0">Dasar-Dasar Konstruksi</h1></div>
+        <div class="timer-box" id="timerBox" aria-live="polite"><span class="timer-icon">⏱</span><div><small>SISA WAKTU</small><strong id="timerText">90:00</strong></div></div>
+      </div>
+      <div class="progress-wrap mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2"><span class="small fw-semibold" id="progressLabel">Soal 1 dari 25</span><span class="small text-secondary" id="answeredLabel">0 terjawab</span></div>
+        <div class="progress" role="progressbar" aria-label="Progres asesmen" aria-valuemin="0" aria-valuemax="25" aria-valuenow="0" id="progressBar"><div class="progress-bar" id="progressFill" style="width:0%"></div></div>
+      </div>
+      <div class="exam-layout">
+        <aside class="question-nav panel-card">
+          <div class="d-flex justify-content-between align-items-center mb-3"><strong>Navigasi soal</strong><span class="badge rounded-pill text-bg-light" id="navCount">0/25</span></div>
+          <div class="question-grid" id="questionGrid" aria-label="Status nomor soal"></div>
+          <div class="nav-legend mt-3"><span><i class="legend-dot current"></i>Aktif</span><span><i class="legend-dot done"></i>Terjawab</span><span><i class="legend-dot todo"></i>Belum</span></div>
+          <div class="mini-student mt-4"><small>PESERTA</small><strong id="miniStudentName">—</strong><span id="miniStudentClass">—</span></div>
+        </aside>
+        <div class="question-panel panel-card">
+          <div class="question-meta d-flex justify-content-between align-items-center gap-2 mb-3"><span class="badge topic-badge">AUTOCAD • GAMBAR BANGUNAN</span><span class="difficulty-badge" id="difficultyBadge">Mudah</span></div>
+          <div class="question-number" id="questionNumber">PERTANYAAN 01</div>
+          <h2 class="question-text" id="questionText">Memuat pertanyaan…</h2>
+          <div id="optionsList" class="options-list" role="group" aria-label="Pilihan jawaban"></div>
+          <div id="feedbackBox" class="feedback-box d-none" role="status" aria-live="polite"></div>
+          <div class="question-actions mt-4 d-flex justify-content-between align-items-center gap-3">
+            <span class="small text-secondary" id="lockHint">Pilih satu jawaban untuk melanjutkan.</span>
+            <button id="nextButton" class="btn btn-primary btn-lg" type="button" disabled>Soal berikutnya →</button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4"><button id="finishEarlyButton" class="btn btn-link text-secondary text-decoration-none" type="button">Akhiri asesmen sekarang</button></div>
+    </section>
+
+    <section id="resultScreen" class="screen d-none">
+      <div class="result-hero text-center">
+        <div class="result-icon" id="resultEmoji" aria-hidden="true">🎉</div>
+        <div class="section-kicker">ASESMEN SELESAI</div>
+        <h1 class="display-6 fw-bold mb-2" id="resultTitle">Hasil Asesmen</h1>
+        <p class="text-secondary mb-0" id="resultSubtitle">Berikut ringkasan hasil pengerjaanmu.</p>
+      </div>
+      <div class="result-card panel-card">
+        <div class="score-area">
+          <div class="score-ring" id="scoreRing"><div><strong id="scoreValue">0</strong><span>NILAI</span></div></div>
+          <div class="score-caption"><span class="section-kicker">NILAI AKHIR</span><h2 id="scoreMessage">Terus berlatih!</h2><p id="scoreDescription" class="text-secondary mb-0">Setiap latihan membantu meningkatkan keterampilanmu.</p></div>
+        </div>
+        <div class="row g-3 result-stats">
+          <div class="col-6 col-lg-3"><div class="stat-box"><span class="stat-symbol correct-symbol">✓</span><small>Jawaban benar</small><strong id="correctCount">0</strong></div></div>
+          <div class="col-6 col-lg-3"><div class="stat-box"><span class="stat-symbol wrong-symbol">×</span><small>Jawaban salah</small><strong id="wrongCount">0</strong></div></div>
+          <div class="col-6 col-lg-3"><div class="stat-box"><span class="stat-symbol">⌛</span><small>Waktu pengerjaan</small><strong id="durationValue">00:00</strong></div></div>
+          <div class="col-6 col-lg-3"><div class="stat-box"><span class="stat-symbol">☷</span><small>Soal dijawab</small><strong id="totalAnswered">0/25</strong></div></div>
+        </div>
+        <div class="student-result mt-4">
+          <div class="section-kicker mb-3">IDENTITAS PESERTA</div>
+          <div class="row g-3"><div class="col-md-5"><small>Nama lengkap</small><strong id="resultName">—</strong></div><div class="col-md-3"><small>NIS</small><strong id="resultNis">—</strong></div><div class="col-md-4"><small>Kelas</small><strong id="resultClass">—</strong></div></div>
+        </div>
+        <div class="result-actions d-flex flex-wrap gap-2 justify-content-center mt-4">
+          <button id="printButton" class="btn btn-outline-primary btn-lg" type="button">Cetak hasil</button>
+          <button id="restartButton" class="btn btn-primary btn-lg" type="button">Kembali ke awal</button>
+        </div>
+        <p class="result-note text-center mt-3 mb-0">Hasil ini ditampilkan di perangkat saat ini. Untuk pengumpulan nilai terpusat, diperlukan integrasi backend atau layanan penyimpanan.</p>
+      </div>
+      <footer class="app-footer">GENIUS ASSESSMENT <span>•</span> AI FOR CONSTRUCTIONS</footer>
+    </section>
+  </main>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
